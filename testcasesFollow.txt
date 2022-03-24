@@ -1,0 +1,82 @@
+Input-1:
+5
+E->TX
+X->+TX|#
+T->FY
+Y->*FY|#
+F->(E)|i
+Output-1:
+FOLLOW(E) = { $, ) }
+FOLLOW(F) = { $, ), *, + }
+FOLLOW(T) = { $, ), + }
+FOLLOW(X) = { $, ) }
+FOLLOW(Y) = { $, ), + }
+
+Input-2:
+6
+S->aBDh
+B->cC
+C->bC|#
+D->E|F
+E->g|#
+F->f|#
+Output-2:
+FOLLOW(B) = { f, g, h }
+FOLLOW(C) = { f, g, h }
+FOLLOW(D) = { h }
+FOLLOW(E) = { h }
+FOLLOW(F) = { h }
+FOLLOW(S) = { $ }
+
+Input-3:
+7
+S->ABE
+S->a
+A->p
+A->t
+B->Aq
+S->f
+A->w
+Output-3:
+FOLLOW(A) = { p, q, t, w }
+FOLLOW(B) = {  }
+FOLLOW(E) = { $ }
+FOLLOW(S) = { $ }
+
+Input-4:
+3
+E->XY
+X->ilove
+Y->t4tutorials
+Output-4:
+FOLLOW(E) = { $ }
+FOLLOW(X) = { t }
+FOLLOW(Y) = { $ }
+
+Input-5:
+6
+P->S
+S->iEtB|wEdB|E
+E->T|zT|nE|+a|-a
+T->a|b
+B->S|{V}
+V->SV|#
+Output-5:
+FOLLOW(B) = { $, +, -, a, b, i, n, w, z, } }
+FOLLOW(E) = { $, +, -, a, b, d, i, n, t, w, z, } }
+FOLLOW(P) = { $ }
+FOLLOW(S) = { $, +, -, a, b, i, n, w, z, } }
+FOLLOW(T) = { $, +, -, a, b, d, i, n, t, w, z, } }
+FOLLOW(V) = { } }
+
+Input-6:
+4
+S->ACB|CbB|Ba
+A->da|BC
+B->g|#
+C->h|#
+Output-6:
+FOLLOW(A) = { $, g, h }
+FOLLOW(B) = { $, a, g, h }
+FOLLOW(C) = { $, b, g, h }
+FOLLOW(S) = { $ }

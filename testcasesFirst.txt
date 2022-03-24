@@ -1,0 +1,57 @@
+Input:
+6
+P->S
+S->iEtB|wEdB|E
+E->T|zT|nE|+a|-a
+T->a|b
+B->S|{V}
+V->SV|@
+Output:
+FIRST(B) = { +, -, a, b, i, n, w, z, { }
+FIRST(E) = { +, -, a, b, n, z }
+FIRST(P) = { +, -, a, b, i, n, w, z }
+FIRST(S) = { +, -, a, b, i, n, w, z }
+FIRST(T) = { a, b }
+FIRST(V) = { +, -, @, a, b, i, n, w, z }
+
+Input:
+4
+S->ACB|CbB|Ba
+A->da|BC
+B->g|@
+C->h|@
+Output:
+FIRST(A) = { @, d, g, h }
+FIRST(B) = { @, g }
+FIRST(C) = { @, h }
+FIRST(S) = { @, a, b, d, g, h }
+
+Input:
+6
+S->aBDh
+B->cC
+C->bC|@
+D->EF
+E->g|@
+F->f|@
+Output:
+FIRST(B) = { c }
+FIRST(C) = { @, b }
+FIRST(D) = { @, f, g }
+FIRST(E) = { @, g }
+FIRST(F) = { @, f }
+FIRST(S) = { a }
+
+Input:
+5
+E->TA
+A->+TA|@
+T->FB
+B->*FB|@
+F->(E)|a
+Output:
+FIRST(A) = { +, @ }
+FIRST(B) = { *, @ }
+FIRST(E) = { (, a }
+FIRST(F) = { (, a }
+FIRST(T) = { (, a }
