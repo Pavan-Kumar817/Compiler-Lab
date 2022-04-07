@@ -1,0 +1,42 @@
+Input:
+5
+E->TP
+P->+TP|^
+T->FR
+R->*FR|^
+F->(E)|i
+
+Output:
+
+-----FIRST-----
+FIRST(E) = { (, i }
+FIRST(F) = { (, i }
+FIRST(P) = { +, ^ }
+FIRST(R) = { *, ^ }
+FIRST(T) = { (, i }
+-----FOLLOW-----
+FOLLOW(E) = { $, ) }
+FOLLOW(F) = { $, ), *, + }
+FOLLOW(P) = { $, ) }
+FOLLOW(R) = { $, ), + }
+FOLLOW(T) = { $, ), + }
+-----PARSING TABLE-----
+M[ E,( ] = { E->TP }
+M[ E,i ] = { E->TP }
+M[ F,( ] = { F->(E) }
+M[ F,i ] = { F->i }
+M[ P,$ ] = { P->^ }
+M[ P,) ] = { P->^ }
+M[ P,+ ] = { P->+TP }
+M[ R,$ ] = { R->^ }
+M[ R,) ] = { R->^ }
+M[ R,* ] = { R->*FR }
+M[ R,+ ] = { R->^ }
+M[ T,( ] = { T->FR }
+M[ T,i ] = { T->FR }
+          $                   (                   )                   *                   +                   i                   
+E                             E->TP                                                                           E->TP               
+F                             F->(E)                                                                          F->i                
+P         P->^                                    P->^                                    P->+TP                                  
+R         R->^                                    R->^                R->*FR              R->^                                    
+T                             T->FR                                                                           T->FR               
